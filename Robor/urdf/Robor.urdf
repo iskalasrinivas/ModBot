@@ -54,8 +54,8 @@
         value="0.72827" />
       <inertia
         ixx="0.0013062"
-        ixy="1.751E-20"
-        ixz="-1.0842E-19"
+        ixy="2.5001E-20"
+        ixz="0"
         iyy="0.0023567"
         iyz="2.039E-07"
         izz="0.0013064" />
@@ -109,17 +109,17 @@
     name="Left Wheel">
     <inertial>
       <origin
-        xyz="-5.5511E-17 0.025016 2.237E-05"
+        xyz="1.4614E-05 0.025016 -1.6936E-05"
         rpy="0 0 0" />
       <mass
         value="0.72827" />
       <inertia
-        ixx="0.0013062"
-        ixy="-1.6292E-20"
-        ixz="-1.6263E-19"
+        ixx="0.0013063"
+        ixy="1.3321E-07"
+        ixz="-1.3543E-07"
         iyy="0.0023567"
-        iyz="2.039E-07"
-        izz="0.0013064" />
+        iyz="-1.5438E-07"
+        izz="0.0013063" />
     </inertial>
     <visual>
       <origin
@@ -170,17 +170,17 @@
     name="Castor Wheel">
     <inertial>
       <origin
-        xyz="0 0 0"
+        xyz="0.02265 -0.021758 0.015149"
         rpy="0 0 0" />
       <mass
-        value="0.5" />
+        value="0.30661" />
       <inertia
-        ixx="0"
-        ixy="0"
-        ixz="0"
-        iyy="0"
-        iyz="0"
-        izz="0" />
+        ixx="0.00015455"
+        ixy="-2.2384E-06"
+        ixz="-4.0131E-06"
+        iyy="0.00020104"
+        iyz="-1.4704E-07"
+        izz="0.00018009" />
     </inertial>
     <visual>
       <origin
@@ -193,7 +193,7 @@
       <material
         name="">
         <color
-          rgba="1 1 1 1" />
+          rgba="0.75294 0.75294 0.75294 1" />
       </material>
     </visual>
     <collision>
@@ -208,21 +208,16 @@
   </link>
   <joint
     name="CW"
-    type="continuous">
+    type="fixed">
     <origin
-      xyz="-0.15394 -0.35895 0.2043"
-      rpy="-1.5735 0.069867 -0.03916" />
+      xyz="-0.16947 -0.36094 0.20391"
+      rpy="1.5708 0.10274 0" />
     <parent
       link="Chassis" />
     <child
       link="Castor Wheel" />
     <axis
-      xyz="0 1 0" />
-    <limit
-      lower="0"
-      upper="0"
-      effort="0"
-      velocity="0" />
+      xyz="0 0 0" />
     <dynamics
       damping="1"
       friction="0.01" />
