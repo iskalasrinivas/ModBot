@@ -1,2 +1,2 @@
 # ModBot
-Modular Robot
+Modular Robot for telepresence
