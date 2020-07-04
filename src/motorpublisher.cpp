@@ -20,7 +20,9 @@ void MotorPublisher::sendCommands(){
     ros::Rate loop_rate(10);
     while (ros::ok())
     {
-    message.linear.x = 1000.0;
+    message.linear.x = 0.0;
+    message.angular.z = 0.2;
+    
     publishVelocity.publish(message);
     ros::spinOnce();
     loop_rate.sleep();

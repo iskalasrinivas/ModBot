@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'RW', 'LW', ]
+controller_joint_names: ['', 'RW', 'LW', 'CWF', 'CWW', ]
