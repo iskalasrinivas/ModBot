@@ -10,7 +10,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find Robor)/urdf/Robor.sdf -sdf -model Robor -R -1.57"
+    args="-file $(find modbot)/urdf/Robor.sdf -sdf -model Robor -R -1.57"
     output="screen" />
   <node
     name="fake_joint_calibration"
@@ -18,11 +18,14 @@
     type="rostopic"
     args="pub /calibrated std_msgs/Bool true" />
 
-   <param name="my_robot_description" textfile="$(find Robor)/urdf/Robor.urdf"/>
+   <param name="my_robot_description" textfile="$(find modbot)/urdf/Robor.urdf"/>
     
    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub" >
       <remap from="robot_description" to="my_robot_description" />
       <remap from="joint_states" to="different_joint_states" />
     </node>
+
+  <node pkg="modbot" type="motor" name="mod_bot" >
+   </node>
 
 </launch>

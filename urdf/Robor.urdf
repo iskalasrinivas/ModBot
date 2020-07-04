@@ -4,6 +4,7 @@
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
   name="Robor">
+
   <link
     name="Chassis">
     <inertial>
@@ -222,4 +223,27 @@
       damping="1"
       friction="0.01" />
   </joint>
+  
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libdiffdrive_plugin.so">
+     <rosDebugLevel>Debug</rosDebugLevel>
+     <publishWheelTF>false</publishWheelTF>
+     <robotNamespace>/</robotNamespace>
+		<publishTf>1</publishTf>
+		<publishWheelJointState>false</publishWheelJointState>
+		<alwaysOn>true</alwaysOn>
+		<updateRate>100.0</updateRate>
+		<leftJoint>LW</leftJoint>
+		<rightJoint>RW</rightJoint>
+		<wheelSeparation>0.407</wheelSeparation>
+		<wheelDiameter>0.153</wheelDiameter>
+		<broadcastTF>1</broadcastTF>
+		<wheelTorque>30</wheelTorque>
+		<wheelAcceleration>0.0</wheelAcceleration>
+		<commandTopic>cmd_vel</commandTopic>
+		<odometryFrame>odom</odometryFrame>
+		<odometryTopic>odom</odometryTopic>
+		<robotBaseFrame>Chassis</robotBaseFrame>
+    </plugin>
+  </gazebo>
 </robot>
