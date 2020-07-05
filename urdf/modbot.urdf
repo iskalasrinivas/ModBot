@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="modbot">
+  <link
+    name="Chassis">
+    <inertial>
+      <origin
+        xyz="0.033693 -0.5869 0.17916"
+        rpy="0 0 0" />
+      <mass
+        value="10.493" />
+      <inertia
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Right Wheel">
+    <inertial>
+      <origin
+        xyz="2.2123E-05 0.024462 3.3103E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.72827" />
+      <inertia
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Right Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Right Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RW"
+    type="continuous">
+    <origin
+      xyz="0.11841 -0.39765 0"
+      rpy="-1.5708 0 0.78245" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Right Wheel" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="1"
+      friction="0.01" />
+  </joint>
+  <link
+    name="Left Wheel">
+    <inertial>
+      <origin
+        xyz="-1.4614E-05 0.025016 1.6936E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.72827" />
+      <inertia
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Left Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Left Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LW"
+    type="continuous">
+    <origin
+      xyz="0.11841 -0.39765 0.35775"
+      rpy="1.5708 0 -0.37673" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Left Wheel" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+    <dynamics
+      damping="1"
+      friction="0.01" />
+  </joint>
+  <link
+    name="Caster Frame">
+    <inertial>
+      <origin
+        xyz="-0.00039601 8.4579E-06 -0.042488"
+        rpy="0 0 0" />
+      <mass
+        value="0.069072" />
+      <inertia
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Caster Frame.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Caster Frame.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CWF"
+    type="revolute">
+    <origin
+      xyz="-0.13379 -0.42645 0.17915"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="Caster Frame" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Caster Wheel">
+    <inertial>
+      <origin
+        xyz="3.0043E-06 -4.5171E-06 -2.5115E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.19827" />
+      <inertia
+        ixx="0.1"
+        ixy="0"
+        ixz="0"
+        iyy="0.1"
+        iyz="0"
+        izz="0.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Caster Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.9098 0.44314 0.031373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://modbot/meshes/Caster Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="CWW"
+    type="continuous">
+    <origin
+      xyz="-0.0125 0 -0.0675"
+      rpy="0 0 0" />
+    <parent
+      link="Caster Frame" />
+    <child
+      link="Caster Wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+
+<gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <legacyMode>false</legacyMode>
+      <alwaysOn>true</alwaysOn>
+      <updateRate>10</updateRate>
+      <leftJoint>LW</leftJoint>
+      <rightJoint>RW</rightJoint>
+      <wheelSeparation>0.407</wheelSeparation>
+      <wheelDiameter>0.153</wheelDiameter>
+      <torque>10</torque>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>Chassis</robotBaseFrame>
+      <publishWheelTF>false</publishWheelTF>
+      <publishWheelJointState>false</publishWheelJointState>
+      <rosDebugLevel>na</rosDebugLevel>
+      <wheelAcceleration>0</wheelAcceleration>
+      <wheelTorque>5</wheelTorque>
+      <odometrySource>world</odometrySource>
+      <publishTf>1</publishTf>
+      <publishOdomTF>true</publishOdomTF>
+    </plugin>
+  </gazebo>
+</robot>
