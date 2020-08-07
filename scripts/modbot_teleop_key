@@ -42,7 +42,7 @@ LIN_VEL_STEP_SIZE = 0.01
 ANG_VEL_STEP_SIZE = 0.1
 
 msg = """
-Control Your TurtleBot3!
+Control Your ModBot!
 ---------------------------
 Moving around:
         welif turtlebot3_model == "waffle" or turtlebot3_model == "waffle_pi":

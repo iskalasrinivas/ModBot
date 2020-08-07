@@ -11,14 +11,14 @@
         xyz="0.0028075 1.5973E-12 0.10958"
         rpy="0 0 0" />
       <mass
-        value="17.5" />
+        value="10.42" />
       <inertia
-        ixx="44.46"
-        ixy="0.23"
-        ixz="2.3"
-        iyy="46.58"
+        ixx="0.45"
+        ixy="0"
+        ixz="0.02"
+        iyy="0.47"
         iyz="0"
-        izz="31.5" />
+        izz="0.6" /> 
     </inertial>
     <visual>
       <origin
@@ -48,17 +48,17 @@
     name="Right Wheel">
     <inertial>
       <origin
-        xyz="2.2123E-05 0.024462 3.3103E-06"
+        xyz="-2.0435E-05 0.024462 -9.1005E-06"
         rpy="0 0 0" />
       <mass
         value="2" />
       <inertia
-        ixx="0.12"
+        ixx="0"
         ixy="0"
         ixz="0"
-        iyy="0.23"
+        iyy="0.01"
         iyz="0"
-        izz="0.12" />
+        izz="0" />
     </inertial>
     <visual>
       <origin
@@ -89,7 +89,7 @@
     type="continuous">
     <origin
       xyz="0.0886 -0.17915 -0.078"
-      rpy="3.1416 0.78245 0" />
+      rpy="0 -0.78245 3.1416" />
     <parent
       link="Chassis" />
     <child
@@ -109,17 +109,17 @@
     name="Left Wheel">
     <inertial>
       <origin
-        xyz="-1.4614E-05 0.025016 1.6936E-05"
+        xyz="2.2109E-05 0.025016 3.4045E-06"
         rpy="0 0 0" />
       <mass
         value="2" />
       <inertia
-        ixx="0.12"
+        ixx="0"
         ixy="0"
         ixz="0"
-        iyy="0.23"
+        iyy="0.01"
         iyz="0"
-        izz="0.12" />
+        izz="0" />
     </inertial>
     <visual>
       <origin
@@ -173,7 +173,7 @@
         xyz="-0.00039601 8.4579E-06 -0.042488"
         rpy="0 0 0" />
       <mass
-        value="0.5" />
+        value="0.069072" />
       <inertia
         ixx="0"
         ixy="0"
@@ -231,14 +231,14 @@
         xyz="3.0043E-06 -4.5171E-06 -2.5115E-06"
         rpy="0 0 0" />
       <mass
-        value="0.5" />
+        value="0.19827" />
       <inertia
-        ixx="0.01"
+        ixx="0"
         ixy="0"
         ixz="0"
-        iyy="0.01"
+        iyy="0"
         iyz="0"
-        izz="0.01" />
+        izz="0" />
     </inertial>
     <visual>
       <origin
@@ -281,10 +281,10 @@
     name="Lidar">
     <inertial>
       <origin
-        xyz="0.0011721 0.00053209 -0.0019149"
+        xyz="0 0 0"
         rpy="0 0 0" />
       <mass
-        value="0.1" />
+        value="0" />
       <inertia
         ixx="0"
         ixy="0"
@@ -304,7 +304,7 @@
       <material
         name="">
         <color
-          rgba="0.79216 0.81961 0.93333 1" />
+          rgba="1 1 1 1" />
       </material>
     </visual>
     <collision>
@@ -331,6 +331,7 @@
       xyz="0 0 0" />
   </joint>
 
+
 <gazebo>
 
 <!-- differential drive -->
@@ -354,7 +355,7 @@
       <wheelTorque>5</wheelTorque>
       <odometrySource>world</odometrySource>
       <publishTf>1</publishTf>
-      <publishOdomTF>true</publishOdomTF>
+      <publishOdomTF>false</publishOdomTF>
     </plugin>
 
 </gazebo>

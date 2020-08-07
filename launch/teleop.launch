@@ -1,0 +1,8 @@
+<launch>
+
+<!-- uses teleop node to run the robot -->
+
+<node pkg="modbot" type="modbot_teleop_key" name="modbot_teleop"  output="screen">
+  </node>
+
+</launch>
