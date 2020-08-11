@@ -3,7 +3,7 @@ Modular Robot
 
 
 ## URDF Exporter Steps
-Step 1: Download exporter for Solidworks from http://wiki.ros.org/sw_urdf_exporter
+Step 1: Download exporter for Solidworks from http://wiki.ros.org/sw_urdf_exporter \
 Step 2: After creating assembly, click on File --> Export as URDF
 Step 3: Define Links (and child links if any) and Joints, click Preview and Export
 Step 4: Confirm values and click Export URDF With Meshes
