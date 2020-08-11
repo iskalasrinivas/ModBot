@@ -2,7 +2,7 @@
 
  <!-- launches modbot world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find modbot)/world/modbot.world"/>
+    <arg name="world_name" value="$(find modbot)/world/modbot2.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -10,8 +10,7 @@
     <arg name="debug" value="false"/>
   </include>
 
-<!-- use when implementing real lidar sensor -->
-
+  <!-- use when implementing real lidar sensor -->
   <!-- include file="$(find rplidar_ros)/launch/rplidar.launch"></include -->
 
  <!-- launches custom build robot called modbot with upright position-->
@@ -21,6 +20,7 @@
     type="spawn_model"
     args="-file $(find modbot)/urdf/modbot.urdf -urdf -model modbot"
     output="screen" />
+
   <node
     name="fake_joint_calibration"
     pkg="rostopic"
@@ -29,13 +29,7 @@
 
  <!-- robot description of modbot stored in parameter server -->
    <param name="robot_description" textfile="$(find modbot)/urdf/modbot.urdf"/>
-
    <node pkg="robot_state_publisher" type="robot_state_publisher" name="rob_st_pub"/>
-
-
- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-
- <node type="rviz" name="rviz" pkg="rviz" args="-d $(find modbot)/rviz/modbot.rviz" />
-
-
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+ 
 </launch>

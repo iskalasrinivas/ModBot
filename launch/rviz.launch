@@ -1,0 +1,6 @@
+<launch>
+
+<!-- launches rviz with the set configuration -->
+<node type="rviz" name="rviz" pkg="rviz" args="-d $(find modbot)/rviz/modbot.rviz" />
+
+</launch>
